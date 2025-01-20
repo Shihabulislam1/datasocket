@@ -19,11 +19,17 @@ def init_db():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS arm_data (
             id INTEGER PRIMARY KEY,
-            base INTEGER,
-            shoulder INTEGER,
-            knee INTEGER,
-            wrist INTEGER,
-            grip INTEGER
+            baseRight TEXT,
+            baseLeft TEXT,
+            shoulderDown TEXT,
+            shoulderUp TEXT,
+            elbowDown TEXT,
+            elbowUp TEXT,
+            wristDown TEXT,
+            wristUp TEXT,
+            gripDown TEXT,
+            gripUp TEXT,
+            motor BOOLEAN
         )
     ''')
     
@@ -43,9 +49,9 @@ def store_data(data):
 
     # Insert data into arm_data table
     cursor.execute('''
-        INSERT INTO arm_data (base, shoulder, knee, wrist, grip)
+        INSERT INTO arm_data (baseRight, baseLeft, shoulderDown, shoulderUp, elbowDown, elbowUp, wristDown, wristUp, gripDown, gripUp, motor)
         VALUES (?, ?, ?, ?, ?)
-    ''', (data['arm']['base'], data['arm']['shoulder'], data['arm']['knee'], data['arm']['wrist'], data['arm']['grip']))
+    ''', (data['arm']['baseRight'], data['arm']['baseLeft'], data['arm']['shoulderDown'], data['arm']['shoulderUp'], data['arm']['elbowDown'], data['arm']['elbowUp'], data['arm']['wristDown'], data['arm']['wristUp'], data['arm']['gripDown'], data['arm']['gripUp'], data['arm']['motor']))
 
     conn.commit()
     conn.close()

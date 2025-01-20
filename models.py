@@ -7,8 +7,14 @@ class BotData(BaseModel):
     speed: int
 
 class ArmData(BaseModel):
-    base: int
-    shoulder: int
-    knee: int
-    wrist: int
-    grip: int
+    baseRight: str
+    baseLeft: str
+    shoulderDown: str
+    shoulderUp: str
+    elbowDown: str
+    elbowUp: str
+    wristDown: str
+    wristUp: str
+    gripDown: str
+    gripUp: str
+    motor: bool
