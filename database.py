@@ -19,16 +19,16 @@ def init_db():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS arm_data (
             id INTEGER PRIMARY KEY,
-            baseRight TEXT,
-            baseLeft TEXT,
-            shoulderDown TEXT,
-            shoulderUp TEXT,
-            elbowDown TEXT,
-            elbowUp TEXT,
-            wristDown TEXT,
-            wristUp TEXT,
-            gripDown TEXT,
-            gripUp TEXT,
+            baseRight BOOLEAN,
+            baseLeft BOOLEAN,
+            shoulderDown BOOLEAN,
+            shoulderUp BOOLEAN,
+            elbowDown BOOLEAN,
+            elbowUp BOOLEAN,
+            wristDown BOOLEAN,
+            wristUp BOOLEAN,
+            gripDown BOOLEAN,
+            gripUp BOOLEAN,
             motor BOOLEAN
         )
     ''')
